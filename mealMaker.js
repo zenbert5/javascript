@@ -6,14 +6,23 @@ const menu = {
     	_mains: [],
     	_desserts: [],
 
-    	get appetizers() {},
-  		set appetizers(item) {},
-    	get mains() {},
-    	set mains(item) {},
-    	get desserts() {},
+    	get appetizers() {
+        return this._appetizers;
+      },
+  		set appetizers(item) {
+         this._appetizers = item;
+      },
+    	get mains() {
+        return this._mains;
+      },
+    	set mains(item) {
+         this._mains = item;
+      },
+    	get desserts() {
+        return this._desserts;
+      },
     	set desserts(item) {
-        this._desserts['name'] = item.name;
-        this._desserts['price'] = item.price;
+        this._desserts = item;
       }
   },
 
@@ -25,12 +34,16 @@ const menu = {
     }
   },
 
+  set courses(item) {
+
+  },
+
   addDishToCourse(courseName, name, price) {
     const dish = {
       name: name,
       price: price
     };
-    console.log(dish);
+ //   this._courses[courseName] = [dish.name, dish.price];
 		this._courses[courseName].push(dish);
   },
 
@@ -49,5 +62,18 @@ const menu = {
   }
 };
 
+// load menu
+menu.addDishToCourse('_desserts', 'Mud Pie', 8.95);
+menu.addDishToCourse('_mains', 'NY T-Bone Steak 12oz', 16.95);
+menu.addDishToCourse('_mains', 'Lasagna', 9.95);
+menu.addDishToCourse('_appetizers', 'Tuna Tartar', 8.75);
+menu.addDishToCourse('_appetizers', 'Sea of Mussels', 9.99);
+menu.addDishToCourse('_appetizers', 'Kumamoto Oysters', 13.75);
+menu.addDishToCourse('_desserts', 'Ring Around Fingers', 25.99);
+menu.addDishToCourse('_desserts', 'Megatower of Ice', 10.99);
+menu.addDishToCourse('_desserts', 'MC Crepes', 6.99);
+menu.addDishToCourse('_mains', 'Grilled Salmon', 11.50);
+console.log(menu.courses);
 
-menu.addDishToCourse('appetizers', 'Mud Pie', 8.95);
+// generate random meal
+console.log(menu.generateRandomMeal());
