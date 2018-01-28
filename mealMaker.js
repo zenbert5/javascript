@@ -43,7 +43,6 @@ const menu = {
       name: name,
       price: price
     };
- //   this._courses[courseName] = [dish.name, dish.price];
 		this._courses[courseName].push(dish);
   },
 
