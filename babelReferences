@@ -1,0 +1,60 @@
+recipe:
+
+- Notes: babel is a transpiler for javascript from ES6+ to ES5 for improved compatibility with browsers
+
+1. run 'npm install babel-cli -D' to install babel command line plus include dependencies modules
+2. run 'npm install babel-preset-env -D' to setup babel environment presets along with dependencies modules
+
+3. run 'npm init' (assuming you have npm and node installed) to create the project package.json file
+4. update the package.json file so the "scripts" section includes the "build": "babel <src> -d <target directory>" entry (see example)
+
+5. create the .babelrc file and add the following:
+{
+  "presets": ["env"]
+}
+
+6. run 'npm run build' to commence transpilation (based on the config specified in the .json)
+
+
+--other references--
+
+// install babel to translate ES6 back to ES5
+
+npm install babel-cli 
+
+npm install babel-preset-env
+
+npm run build 
+
+// ES5 code will be located in the ./lib folder
+
+
+// create package.json with npm
+npm init
+
+
+// create package with dependencies
+npm install babel-cli -D
+npm install babel-preset-env -D
+
+
+// -D add each dependency package in package.json, so developers utilizing your code doesn't need to install those packages
+// in the "scripts" section, babel <source> <-d -- designated target as a directory> <target> 
+// command specified in the scripts section would transpilate all ES6 to ES5 into 'lib' folder from 'src' folder
+
+{
+  "name": "learn-javascript-transpilation-bct-npm-init",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.2"
+  }
+}
