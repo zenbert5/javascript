@@ -1,6 +1,6 @@
 // Include data for accessing Google APIs
 
-const apiKey = 'AIzaSyDAj8bMbVdev2t3Sx42twqpw1ROR0TQx0c';
+const apiKey = '';
 const url = 'https://www.googleapis.com/urlshortener/v1/url';
 const projection = 'FULL';
 
